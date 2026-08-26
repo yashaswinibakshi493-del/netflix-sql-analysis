@@ -1,9 +1,24 @@
 -- ============================================================
 -- NETFLIX SQL ANALYSIS
--- Dataset: Netflix Movies and TV Shows
--- Tool: MySQL Workbench
 -- ============================================================
-
+-- Dataset: Netflix Movies and TV Shows
+-- Database: MySQL
+-- Tool: MySQL Workbench
+--
+-- Objective:
+-- Analyze Netflix content data using SQL to identify
+-- content trends, ratings, countries, directors,
+-- duration patterns, and data quality issues.
+--
+-- SQL Concepts Demonstrated:
+-- SELECT, WHERE, GROUP BY, ORDER BY, HAVING
+-- COUNT, AVG, MIN, MAX, ROUND
+-- CASE WHEN
+-- CTEs
+-- Window Functions
+-- RANK()
+-- LAG()
+-- ============================================================
 
 -- ============================================================
 -- 1. DATASET OVERVIEW
@@ -45,7 +60,7 @@ GROUP BY rating
 ORDER BY total_titles DESC;
 
 -- ============================================================
--- 4. BUSINESS INSIGHTS
+-- 3. BUSINESS INSIGHTS
 -- ============================================================
 
 -- Percentage of Movies vs TV Shows
@@ -90,7 +105,7 @@ SELECT
 FROM netflix
 
 -- ============================================================
--- 5. ADVANCED SQL ANALYSIS
+-- 4. ADVANCED SQL ANALYSIS
 -- ============================================================
 
 -- Rank countries by number of titles
@@ -149,7 +164,7 @@ WHERE release_year IS NOT NULL
 GROUP BY type;
 
 -- ============================================================
--- 6. DATA QUALITY CHECKS
+-- 5. DATA QUALITY CHECKS
 -- ============================================================
 
 -- Check for missing values in important columns
