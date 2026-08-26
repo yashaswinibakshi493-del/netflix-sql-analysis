@@ -177,4 +177,35 @@ ORDER BY release_year;
 WHERE release_year IS NOT NULL
 GROUP BY type;
 
+-- ============================================================
+-- 6. DATA QUALITY CHECKS
+-- ============================================================
+
+-- Check for missing values in important columns
+SELECT
+    COUNT(*) AS total_records,
+    SUM(CASE WHEN title IS NULL OR title = '' THEN 1 ELSE 0 END) AS missing_titles,
+    SUM(CASE WHEN type IS NULL OR type = '' THEN 1 ELSE 0 END) AS missing_type,
+    SUM(CASE WHEN country IS NULL OR country = '' THEN 1 ELSE 0 END) AS missing_country,
+    SUM(CASE WHEN rating IS NULL OR rating = '' THEN 1 ELSE 0 END) AS missing_rating,
+    SUM(CASE WHEN release_year IS NULL THEN 1 ELSE 0 END) AS missing_release_year
+FROM netflix;
+
+-- Check for duplicate show IDs
+SELECT
+    show_id,
+    COUNT(*) AS occurrences
+FROM netflix
+GROUP BY show_id
+HAVING COUNT(*) > 1
+ORDER BY occurrences DESC;
+
+-- Check the range of release years
+SELECT
+    MIN(release_year) AS earliest_release_year,
+    MAX(release_year) AS latest_release_year
+FROM netflix;
+
+
+
 
