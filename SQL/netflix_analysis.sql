@@ -72,7 +72,52 @@ SELECT
     director,
     COUNT(*) AS total_titles
 FROM netflix
+
+-- ============================================================
+-- 4. BUSINESS INSIGHTS
+-- ============================================================
+
+-- Percentage of Movies vs TV Shows
+SELECT
+    type,
+    COUNT(*) AS total_titles,
+    ROUND(
+        COUNT(*) * 100.0 / (SELECT COUNT(*) FROM netflix),
+        2
+    ) AS percentage_of_catalogue
+FROM netflix
+GROUP BY type
+ORDER BY percentage_of_catalogue DESC;
+
+-- Number of titles released by decade
+SELECT
+    CONCAT(FLOOR(release_year / 10) * 10, 's') AS decade,
+    COUNT(*) AS total_titles
+FROM netflix
+WHERE release_year IS NOT NULL
+GROUP BY decade
+ORDER BY decade;
+
+-- Movies vs TV Shows by release year
+SELECT
+    release_year,
+    SUM(CASE WHEN type = 'Movie' THEN 1 ELSE 0 END) AS movies,
+    SUM(CASE WHEN type = 'TV Show' THEN 1 ELSE 0 END) AS tv_shows
+FROM netflix
+WHERE release_year IS NOT NULL
+GROUP BY release_year
+ORDER BY release_year;
 WHERE director IS NOT NULL
 GROUP BY director
 ORDER BY total_titles DESC
 LIMIT 10;
+
+-- Average release year by content type
+SELECT
+    type,
+    ROUND(AVG(release_year), 0) AS average_release_year
+FROM netflix
+WHERE release_year IS NOT NULL
+GROUP BY type;
+
+
