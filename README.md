@@ -85,23 +85,6 @@ The dashboard includes:
 - Data quality checks found **5 missing director values** and **5 missing country values**.
 - No duplicate `show_id` values were identified.
 
-## 📂 Project Structure
-
-```text
-Netflix-SQL-Analysis/
-│
-├── README.md
-├── netflix.csv
-│
-├── SQL/
-│   └── netflix_analysis.sql
-│
-└── PowerBI/
-    ├── README.md
-    ├── Page1_Overview.png
-    ├── Page2_Content_Analysis.png
-    └── Page3_Insights.png
-
 ## **💡 Key Skills Demonstrated**
 
 - SQL
