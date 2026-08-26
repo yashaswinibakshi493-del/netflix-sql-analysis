@@ -43,35 +43,6 @@ SELECT
 FROM netflix
 GROUP BY rating
 ORDER BY total_titles DESC;
--- ============================================================
--- 3. GENRE ANALYSIS
--- ============================================================
-
--- Most common genres
-SELECT
-    genres,
-    COUNT(*) AS total_titles
-FROM netflix
-WHERE genres IS NOT NULL
-GROUP BY genres
-ORDER BY total_titles DESC
-LIMIT 10;
-
--- Top countries by number of titles
-SELECT
-    country,
-    COUNT(*) AS total_titles
-FROM netflix
-WHERE country IS NOT NULL
-GROUP BY country
-ORDER BY total_titles DESC
-LIMIT 10;
-
--- Directors with the most titles
-SELECT
-    director,
-    COUNT(*) AS total_titles
-FROM netflix
 
 -- ============================================================
 -- 4. BUSINESS INSIGHTS
