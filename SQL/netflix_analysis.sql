@@ -117,6 +117,63 @@ SELECT
     type,
     ROUND(AVG(release_year), 0) AS average_release_year
 FROM netflix
+
+-- ============================================================
+-- 5. ADVANCED SQL ANALYSIS
+-- ============================================================
+
+-- Rank countries by number of titles
+WITH country_counts AS (
+    SELECT
+        country,
+        COUNT(*) AS total_titles
+    FROM netflix
+    WHERE country IS NOT NULL
+    GROUP BY country
+)
+SELECT
+    country,
+    total_titles,
+    RANK() OVER (ORDER BY total_titles DESC) AS country_rank
+FROM country_counts
+ORDER BY country_rank;
+
+-- Rank titles within each release year
+SELECT
+    release_year,
+    title,
+    type,
+    RANK() OVER (
+        PARTITION BY release_year
+        ORDER BY title
+    ) AS title_rank
+FROM netflix
+WHERE release_year IS NOT NULL
+ORDER BY release_year, title_rank;
+
+-- Year-over-year change in number of titles
+WITH yearly_titles AS (
+    SELECT
+        release_year,
+        COUNT(*) AS total_titles
+    FROM netflix
+    WHERE release_year IS NOT NULL
+    GROUP BY release_year
+)
+SELECT
+    release_year,
+    total_titles,
+    LAG(total_titles) OVER (
+        ORDER BY release_year
+    ) AS previous_year_titles,
+    total_titles -
+    LAG(total_titles) OVER (
+        ORDER BY release_year
+    ) AS change_from_previous_year
+FROM yearly_titles
+ORDER BY release_year;
+
+
 WHERE release_year IS NOT NULL
 GROUP BY type;
 
