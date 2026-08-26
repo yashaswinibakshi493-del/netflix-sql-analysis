@@ -47,4 +47,4 @@ The SQL analysis used for this project is available in the main repository under
 
 The complete Power BI dashboard file is available below:
 
-[Download Netflix Power BI Dashboard](Netflix_SQL_Analysis.pbix)
+[Download Netflix Power BI Dashboard](🎬%20NETFLIX%20DATA%20ANALYSIS%20DASHBOARD.pbix)
