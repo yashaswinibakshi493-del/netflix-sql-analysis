@@ -56,6 +56,20 @@ The SQL analysis was used to identify important trends and insights, which were 
 
 ![Netflix Dashboard - Insights](PowerBI/Page3_Insights.png)
 
+## 💡 Key Insights
+
+## 💡 Key Insights
+
+- **Movies account for 78.26%** of the dataset, while **TV Shows account for 21.74%**.
+- **TV-MA** is the most common content rating with **7 titles**, followed by **TV-14** with **5 titles**.
+- **2020** has the highest number of titles in the dataset with **3 titles**.
+- **United States** has the highest number of titles with **6**, followed by **India** with **5** and **Canada** with **3**.
+- Movies have an average duration of **103.83 minutes**, ranging from **47 to 168 minutes**.
+- TV Shows range from **1 to 4 seasons**, with an average of **1.60 seasons**.
+- The dataset contains **23 records** and includes content released between **1973 and 2020**.
+- Data quality checks found **no missing titles or ratings**, while **5 records have missing director and country information**.
+- No duplicate `show_id` values were identified in the dataset.
+
 ## 💡 Key Skills Demonstrated
 
 - SQL
