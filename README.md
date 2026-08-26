@@ -56,17 +56,22 @@ The SQL analysis was used to identify important trends and insights, which were 
 
 ![Netflix Dashboard - Insights](PowerBI/Page3_Insights.png)
 
-💡 Key Skills Demonstrated
-SQL querying
-Data exploration
-Data quality analysis
-Aggregation and filtering
-Conditional logic
-CTEs
-Window functions
-Data visualization
-Power BI dashboard development
-Business insight generation
-👩‍💻 Author
+## 💡 Key Skills Demonstrated
 
-Yashaswini Bakshi
+- SQL
+- MySQL Workbench
+- Data Cleaning & Data Quality Analysis
+- Data Exploration
+- Data Aggregation & Filtering
+- Conditional Logic (`CASE WHEN`)
+- Common Table Expressions (CTEs)
+- Window Functions (`RANK()`, `LAG()`)
+- Data Analysis & Business Insights
+- Power BI
+- Interactive Dashboard Development
+- Data Visualization
+- GitHub & Project Documentation
+
+## 👩‍💻 Author
+
+**Yashaswini Bakshi**
